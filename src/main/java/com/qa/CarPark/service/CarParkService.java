@@ -11,11 +11,14 @@ import com.qa.CarPark.repo.CarParkRepo;
 @Service
 public class CarParkService {
 	
+	
+	
 	private CarParkRepo repo;
 	
 	public CarParkService(CarParkRepo repo) {
 		this.repo = repo;
 	}
+	
 	
 	public CarPark create(CarPark car) {
 		return this.repo.save(car);
