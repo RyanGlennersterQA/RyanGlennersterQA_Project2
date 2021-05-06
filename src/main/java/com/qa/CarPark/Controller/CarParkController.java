@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.qa.CarPark.Domain.CarPark;
@@ -42,6 +43,11 @@ public class CarParkController {
 	public CarPark removeCar(@PathVariable Long id) {
 		this.service.remove(id);
 		return this.service.getById(id);
+	}
+	
+	@PutMapping("/update/{id}")
+	public ResponseEntity<CarPark> updateCar(@PathVariable Long id, @RequestBody CarPark newCar) {
+		return new ResponseEntity<CarPark>(this.service.update(id, newCar), HttpStatus.ACCEPTED);
 	}
 	
 	@GetMapping("/findByMake")
