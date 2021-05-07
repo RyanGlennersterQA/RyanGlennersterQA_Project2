@@ -41,6 +41,16 @@ public class CarPark {
 	public CarPark() {}
 
 
+	public CarPark(String string, String string2, int i, int j) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public CarPark(long id2, String make2, String model2, int i, int j) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public Long getId() {
 		return id;
 	}
