@@ -9,6 +9,7 @@ const leavingDate = document.querySelector('#departureDate');
 const output = document.querySelector('#output');
 const viewAllBookings = document.querySelector('#viewAllBookings');
 const submitUpdateButton = document.querySelector('#submitUpdate');
+const bookingRemovedTag = document.querySelector('#bookingRemovedTag'); 
 
 const printToScreen = (information) => {
   
@@ -63,7 +64,15 @@ const printToScreen = (information) => {
 
 const deleteBooking = (id) => {
     axios.delete("http://localhost:8080/remove/" + id)
-    location.reload();
+    .then((resp) => {
+        console.log(resp);
+        bookingRemovedTag.innerHTML = "The booking has been removed";
+        setTimeout(() => {
+            bookingRemovedTag.innerHTML = "";
+            location.reload();
+        }, 2000);
+    }).catch((err) => console.error(err));
+    
     }
 
 const showBookingForm = () => {
