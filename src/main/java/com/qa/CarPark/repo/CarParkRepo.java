@@ -8,5 +8,7 @@ import com.qa.CarPark.Domain.CarPark;
 @Repository
 public interface CarParkRepo extends JpaRepository<CarPark, Long>{
 	
+	CarPark findByMake(String make);
+	
 
 }
