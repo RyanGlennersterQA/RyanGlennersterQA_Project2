@@ -1,6 +1,5 @@
 package com.qa.CarPark.Domain;
 
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,40 +13,27 @@ public class CarPark {
 	private Long id;
 	private String make;
 	private String model;
-	private Date arrivalDate;
-	private Date leavingDate;
+	private String arrivalDate;
+	private String leavingDate;
 	
-	
-	
-	
-	public CarPark(Long id, String make, String model, Date arrivalDate, Date leavingDate) {
-		super();
+		public CarPark() {}
+
+
+
+	public CarPark(String make, String model, String arrivalDate, String leavingDate) {
+		this.make = make;
+		this.model = model;
+		this.arrivalDate = arrivalDate;
+		this.leavingDate = leavingDate;
+	}
+
+
+	public CarPark(long id, String make, String model, String arrivalDate, String leavingDate) {
 		this.id = id;
 		this.make = make;
 		this.model = model;
 		this.arrivalDate = arrivalDate;
 		this.leavingDate = leavingDate;
-	}
-
-
-	public CarPark(String make, String model, Date arrivalDate, Date leavingDate) {
-		super();
-		this.make = make;
-		this.model = model;
-		this.arrivalDate = arrivalDate;
-		this.leavingDate = leavingDate;
-	}
-	
-	public CarPark() {}
-
-
-	public CarPark(String string, String string2, int i, int j) {
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public CarPark(long id2, String make2, String model2, int i, int j) {
-		// TODO Auto-generated constructor stub
 	}
 
 
@@ -81,23 +67,30 @@ public class CarPark {
 	}
 
 
-	public Date getArrivalDate() {
+	public String getArrivalDate() {
 		return arrivalDate;
 	}
 
 
-	public void setArrivalDate(Date arrivalDate) {
+	public void setArrivalDate(String arrivalDate) {
 		this.arrivalDate = arrivalDate;
 	}
 
 
-	public Date getLeavingDate() {
+	public String getLeavingDate() {
 		return leavingDate;
 	}
 
 
-	public void setLeavingDate(Date leavingDate) {
+	public void setLeavingDate(String leavingDate) {
 		this.leavingDate = leavingDate;
+	}
+
+
+	@Override
+	public String toString() {
+		return "CarPark [id=" + id + ", make=" + make + ", model=" + model + ", arrivalDate=" + arrivalDate
+				+ ", leavingDate=" + leavingDate + "]";
 	}
 	
 	
