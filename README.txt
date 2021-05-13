@@ -99,7 +99,7 @@ https://ryanglennersterqa.atlassian.net/jira/software/c/projects/CPMB/boards/4/r
 
 
 License
-This project is licensed under the MIT license - see the LICENSE.md file for details
+This project is licensed under the MIT license - see the LICENSE.md file for details.
 
 
 
