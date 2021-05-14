@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Park Manager</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <link href="./styling.css" type="text/css" rel="Stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to the Glennerster Car Park</h1>
+    </div>
+
+    <div>
+    <img src="./resources/troy-t-YoGzQqqWZP0-unsplash.jpg" id="bannerImage" class="center">
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="container">
+    <button id="createBookingButton" class="btn btn-primary btn-lg" style="display: block; margin: 0 auto;" type="button" value="Create A Booking" onclick="showBookingForm();">Create A Booking</button>
+    <br/>
+    <button id="viewBookingsButton" class="btn btn-primary btn-lg" style="display: block; margin: 0 auto;" type="button" onclick="getBookings();">View All Bookings</button>
+    </div>
+
+    <br/>
+    <br/>
+
+    <h3 id="bookingRemovedTag"></h3>
+
+    <div id="viewAllBookings"></div>
+
+    <div class="row container">
+        <section class="col3">
+            <div class="align-items-center" id="createBookingForm" style="display: none;">
+                <label for="carMake">Your Car Make</label>
+                <input name="make" id="carMake" class="form-control"/>
+                <label for="carModel" class="form-label">Your Car Model</label>
+                <input type="text" name="carModel" id="carModel" class="form-control"/>
+                <label for="arrivalDate" class="form-label">Your Arrival Date</label>
+                <input type="date" name="arrivalDate" id="arrivalDate" class="form-control"/>
+                <label for="LeavingDate" class="form-label">Your Departure Date</label>
+                <input type="date" name="LeavingDate" id="departureDate" class="form-control"/>
+                <button type="reset" class="btn btn-primary">Reset Fields</button>
+                <button type="submit" class="btn btn-primary" value="submit "onclick="createUser();">Submit</button>
+            </div>
+        </section>
+    </div>
+
+    <div class="row">
+        <section class="col2">
+            <div id="updateBookingForm" style="display: none;">
+                <label for="carMake">Updated Car Make</label>
+                <input name="make" id="updatedCarMake" class="form-control"/>
+                <label for="carModel" class="form-label">Updated Car Model</label>
+                <input type="text" name="carModel" id="updatedCarModel" class="form-control"/>
+                <label for="arrivalDate" class="form-label">Updated Arrival Date</label>
+                <input type="date" name="arrivalDate" id="updatedArrivalDate" class="form-control"/>
+                <label for="LeavingDate" class="form-label">Updated Departure Date</label>
+                <input type="date" name="LeavingDate" id="updatedDepartureDate" class="form-control"/>
+                <button type="reset" class="btn btn-primary">Reset Fields</button>
+                <button type="submit" class="btn btn-primary" value="submit " id="submitUpdate">Submit</button>
+            </div>
+        </section>
+    </div>
+
+    <div id="updateSuccess"></div>
+
+
+
+    <section class="col-10">
+        <div id="output" class="m-2 card-group row row-cols-4 g-4"></div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./carPark.js"></script>
+</body>
+</html>
